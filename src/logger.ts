@@ -17,11 +17,11 @@ export class Logger {
     success: "#53F00D"
   } as const;
 
-  readonly #timezone!: Timezone;
+  readonly #timezone?: Timezone;
   readonly #formatString!: string;
 
   constructor(op?: { tz?: Timezone; format?: string }) {
-    this.#timezone = op?.tz ?? "GMT";
+    this.#timezone = op?.tz;
     this.#formatString = op?.format ?? "DD-MM-YYYY hh:mm:ss";
   }
 
@@ -60,7 +60,8 @@ export class Logger {
   }
 
   get #time() {
-    return moment().tz(this.#timezone).format(this.#formatString);
+    if (this.#timezone) return moment().tz(this.#timezone).format(this.#formatString);
+    return moment().format(this.#formatString);
   }
 
   log(

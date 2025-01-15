@@ -2,7 +2,7 @@
 
 import { Logger } from "./logger.js";
 
-const logger = new Logger({ tz: "Asia/Kolkata" });
+const logger = new Logger({});
 
 logger.debug("This is a log message\nThis is a log message second line");
 logger.warn("This is a log message\nThis is a log message second line");
