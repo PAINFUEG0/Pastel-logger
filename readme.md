@@ -34,29 +34,26 @@ const { Logger } = require("pastel-logger");
 
 const logger = new Logger();
 
-// normal
+// general methods
 logger.log("This is a log message");
-
-// debug
 logger.debug("This is a debug message");
-
-// warn
 logger.warn("This is a warning message");
-
-// error
 logger.error("This is an error message");
-
-// info
 logger.info("This is an info message");
-
-// success
 logger.success("This is a success message");
+
+// log levels
+logger.log("This is a debug message", "debug");
+logger.log("This is a warning message", "warn");
+logger.log("This is an error message", "error");
+logger.log("This is an info message", "info");
+logger.log("This is a success message", "success");
+
+// custom color (hex)
+logger.log("This is a log message", "#694200");
 
 // blank (possibly hides on most terminals, avoiding attention)
 // useful for logs that aren't a priority over other logs
 // but doesn't mean they should be excluded altogether
 logger.blank("This is a log message");
-
-// custom color (hex)
-logger.log("This is a log message", "#694200");
 ```
