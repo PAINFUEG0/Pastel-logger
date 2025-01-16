@@ -6,17 +6,17 @@ import momentDurationFormatSetup from "moment-duration-format";
 
 import type { Timezone } from "./timezones.js";
 
+const logLevels = {
+  info: "#5ADAF1",
+  warn: "#FFAA00",
+  debug: "#CF9FFF",
+  error: "#FF5555",
+  success: "#53F00D"
+} as const;
+
 momentDurationFormatSetup(moment);
 
 export class Logger {
-  private readonly logLevels = {
-    info: "#5ADAF1",
-    warn: "#FFAA00",
-    debug: "#CF9FFF",
-    error: "#FF5555",
-    success: "#53F00D"
-  } as const;
-
   readonly #timezone?: Timezone;
   readonly #formatString!: string;
 
@@ -66,7 +66,7 @@ export class Logger {
 
   log(
     content: string,
-    level: keyof typeof this.logLevels | `#${string}` = "debug",
+    level: keyof typeof logLevels | `#${string}` = "debug",
     bold: boolean = true
   ) {
     const time = this.#colorizeText(this.#time, "#AAAAAA", bold);
@@ -78,11 +78,11 @@ export class Logger {
           .join("\n")
       : content;
 
-    if (level in this.logLevels)
+    if (level in logLevels)
       //@ts-expect-error No errors just loose typing
       return console[level === "success" ? "log" : level](
         //@ts-expect-error No errors just loose typing
-        `${time} ${this.#colorizeText(formattedContent, this.logLevels[level], bold)}`
+        `${time} ${this.#colorizeText(formattedContent, logLevels[level], bold)}`
       );
 
     return console.log(
