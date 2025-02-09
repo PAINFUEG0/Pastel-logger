@@ -52,6 +52,11 @@ logger.log("This is a success message", "success");
 // custom color (hex)
 logger.log("This is a log message", "#694200");
 
+// disable bold text
+// all logs are bold by default (except logger#blank)
+// but if you need a custom colored text without bold:
+logger.log("This is a log message", "#694200", false);
+
 // blank (possibly hides on most terminals, avoiding attention)
 // useful for logs that aren't a priority over other logs
 // but doesn't mean they should be excluded altogether
