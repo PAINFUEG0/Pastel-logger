@@ -21,7 +21,7 @@
     "email": "support@codes-for.fun.com",
     "url": "https://github.com/PAINFUEG0/Evangelion/issues"
   },
-  "description": "idk wtf this is",
+  "description": "simple logging utility",
   "intended_use": "For educational and demonstration purposes.",
   "engines": {
     "node": ">=20"
