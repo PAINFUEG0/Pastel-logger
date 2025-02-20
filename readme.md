@@ -22,7 +22,7 @@ const logger = new Logger({ format: "DD-MM-YYYY hh:mm:ss" });
 # Usage
 
 ```js
-const { Logger } = require("pastel-logger");
+import { Logger } from "pastel-logger";
 
 const logger = new Logger();
 
