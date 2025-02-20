@@ -1,6 +1,6 @@
 /** @format */
 
-import { Logger } from "./logger.js";
+import { Logger } from "./index.js";
 
 const logger = new Logger({
   tz: "Asia/Kolkata",

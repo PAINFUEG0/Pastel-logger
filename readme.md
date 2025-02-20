@@ -2,16 +2,8 @@
 
 # Import
 
-## ES Module
-
 ```js
 import { Logger } from "pastel-logger";
-```
-
-## Common JS
-
-```js
-const { Logger } = require("pastel-logger");
 ```
 
 # Initialization

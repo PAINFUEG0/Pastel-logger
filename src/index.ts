@@ -4,8 +4,6 @@ import "moment-timezone";
 import moment from "moment";
 import momentDurationFormatSetup from "moment-duration-format";
 
-import type { Timezone } from "./timezones.js";
-
 const logLevels = {
   info: "#5ADAF1",
   warn: "#FFAA00",
@@ -17,10 +15,10 @@ const logLevels = {
 momentDurationFormatSetup(moment);
 
 export class Logger {
-  readonly #timezone?: Timezone;
+  readonly #timezone?: string;
   readonly #formatString!: string;
 
-  constructor(op?: { tz?: Timezone; format?: string }) {
+  constructor(op?: { tz?: string; format?: string }) {
     this.#timezone = op?.tz;
     this.#formatString = op?.format ?? "DD-MM-YYYY hh:mm:ss";
   }

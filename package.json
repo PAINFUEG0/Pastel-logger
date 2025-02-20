@@ -3,8 +3,12 @@
   "name": "pastel-logger",
   "type": "module",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "author": "painfuego",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "author": "painfuego (https://github.com/PAINFUEG0)",
   "contact_email": "support@codes-for.fun",
   "license": "CC BY-NC-SA 4.0",
   "checksum": "21_N-2K021-ST",
@@ -23,7 +27,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "start": "node app/test.js"
+    "build": "tsc -p tsconfig.json"
   },
   "dependencies": {
     "moment": "^2.30.1",
